@@ -1,0 +1,16 @@
+{
+  "name": "electron-app-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "build": "electron-packager . electron-app.test --overwrite --asar=true --platform=win32 --arch=ia32 --icon=play.png --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=2048"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron-packager": "^15.1.0"
+  }  
+}

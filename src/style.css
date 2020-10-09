@@ -1,0 +1,166 @@
+		@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+		*{
+			transition: 0.5s;
+		}
+		body{
+			margin: 0;
+			padding: 0;
+			background: #2196f340;
+			width: 100%;
+			height: 100vh;
+			font-family: 'Inconsolata', monospace;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: relative
+		}
+		.frame{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			display: flex;
+			justify-content: center;
+		}
+		.frame span{
+			position: static;
+			font-size: 1.3rem;
+			padding: 0.4rem;
+			margin: 0;
+			opacity: 0.6;
+			transition: 0.2s
+		}
+		.frame span:nth-child(3){
+			background: #8b0000a8;
+		}
+		.frame span:hover{
+			opacity: 1;
+		}
+		#app{
+			position: relative;
+			z-index: 10;
+		}
+		span{
+			position: absolute;
+			left: -10rem;
+			font-size: 2rem;
+			padding: 1rem;
+			background: #00bcd47a;
+			cursor: pointer;
+			border-radius: 4px;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, .2),
+						-2px -2px 5px rgba(225, 225, 225, .6);
+		}
+		#start{
+			display: grid;
+			justify-content: center;
+			align-items: center;
+			background: #ffffff8a;
+			height: 5rem;
+			margin-bottom: 1rem;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, .2),
+						-2px -2px 5px rgba(225, 225, 225, .6);
+			border-radius: 4px;
+		}
+		#start p:first-child{
+			font-size: 2rem;
+			margin: 1rem 1rem
+		}
+		#start:nth-child(2){
+			font-size: 2rem;
+			display: block;
+			/* color: skyblue; */
+		}
+
+		.row{
+			width: 60vh;
+			height: 20vh;
+			background: #88888873;
+			display: flex;
+		}
+		.item_row{
+			overflow: hidden;
+			width: 20vh;
+			height: 20vh;
+			font-size: 7rem;
+			display: grid;
+			justify-content: center;
+			align-items: center;
+		}
+		/* opacity */
+		.opacity{
+			opacity: 0.3
+		}
+		.control{
+			position: relative;
+		}
+		.control span{
+			position: absolute;
+		}
+		#up{
+			top: -20rem;
+			left: 33rem;
+		}
+		#down{
+			top: -10rem;
+			left: 33rem;
+		}
+		#left{
+			top: -15rem;
+			left: 28rem;
+		}
+		#right{
+			top: -15rem;
+			left: 38rem;
+		}
+		.pop{
+			animation: pop 0.5s forwards;
+		}
+		@keyframes pop{
+			0%{
+				font-size: 2rem;
+			}
+			50%{
+				font-size: 2.5rem;
+			}
+			100%{
+				font-size: 2rem;
+			}
+		}
+		@keyframes up{
+			50%{
+				z-index: 1;
+			}
+			100%{
+				transform: translate(0, -8rem);
+				z-index: -999;
+			}
+		}
+		@keyframes down{
+			50%{
+				z-index: 1;
+			}
+			100%{
+				z-index: -999;
+				transform: translate(0, 8rem);
+			}
+		}
+		@keyframes right{
+			50%{
+				z-index: 1;
+			}
+			100%{
+				transform: translate(8rem, 0rem);
+				z-index: -999;
+			}
+		}
+		@keyframes left{
+			50%{
+				z-index: 1;
+			}
+			100%{
+				transform: translate(-8rem, 0rem);
+				z-index: -999;
+			}
+		}

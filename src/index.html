@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<nav class="frame">
+		<span class="hide">Hide</span>
+		<span class="size">Maximize & Unmaxsimize</span>
+		<span class="close">Close</span>
+	</nav>
+	<div id="app">
+		<div id="start" :style="{background}">
+			<p v-if="!gameIsRunning">2048 của Vanh đz</p>
+			<p  :class="add" 
+				v-else 
+				style="color: #fff">Score: {{score}}</p>
+		</div>
+		<span v-if="!gameIsRunning"
+			  @click="gameIsRunning=!gameIsRunning;
+			  		  random('first');"
+			  >Start</span>
+		<span v-if="gameIsRunning"
+			  @click="gameIsRunning=!gameIsRunning">End</span>
+		<div v-for="(boxs, i) of allBoxs" 
+			:class="['row', {opacity: !gameIsRunning}]">
+			<div v-for="(box,j) of boxs" 
+				 :class="['item_row']"
+				 :style="[display(box)]"
+				 :id="i + '_' + j">{{box == 0 ? "" : box}}</div>
+		</div>
+		<div class="control">
+			<span id="up" @click="arrow('up');
+			gameIsRunning=!gameIsRunning;gameIsRunning=!gameIsRunning">UP</span>
+			<span id="down" @click="arrow('down');gameIsRunning=!gameIsRunning;gameIsRunning=!gameIsRunning">DOWN</span>
+			<span id="right" @click="arrow('right');gameIsRunning=!gameIsRunning;gameIsRunning=!gameIsRunning">RIGHT</span>
+			<span id="left" @click="arrow('left');gameIsRunning=!gameIsRunning;gameIsRunning=!gameIsRunning">LEFT</span>
+		</div>
+	</div>
+<script src="../assets/vue.min.js"></script>
+<script src="../assets/frame.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
